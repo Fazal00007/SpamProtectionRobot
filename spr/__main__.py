@@ -42,10 +42,10 @@ async def main():
     await spr.stop()
 
 
-@spr.on_message(filters.command(["help", "start"]), group=2)
+@spr.on_message(filters.command(["antihelp", "antistart"]), group=2)
 async def help_command(_, message: Message):
     if message.chat.type != "private":
-        kb = ikb({"Help": f"https://t.me/{BOT_USERNAME}?start=help"})
+        kb = ikb({"antiHelp": f"https://t.me/{BOT_USERNAME}?start=help"})
         return await message.reply("Pm Me For Help", reply_markup=kb)
     kb = ikb(
         {
